@@ -1,0 +1,165 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ConversationHistory {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model AiResponse {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model Segment {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  name        String?
+  updatedAt   DateTime @updatedAt
+}
+
+model Preference {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String?
+  updatedAt DateTime @updatedAt
+  value     Json?
+}
+
+model Context {
+  createdAt DateTime @default(now())
+  data      Json?
+  id        String   @id @default(cuid())
+  typeField String?
+  updatedAt DateTime @updatedAt
+}
+
+model ComputeTask {
+  createdAt DateTime               @default(now())
+  id        String                 @id @default(cuid())
+  result    Json?
+  status    EnumComputeTaskStatus?
+  taskName  String?
+  updatedAt DateTime               @updatedAt
+}
+
+model Bookmark {
+  addDate                                                                                                DateTime?
+  aiFigure                                                                                               String?
+  aiPoweredBookRecommendationsBookSurfAi                                                                 String?
+  aiScientist                                                                                            String?
+  allApi                                                                                                 String?
+  applicationOfExcavator_3DGuidanceSystem                                                                String?
+  applicationOfExcavator_3DGuidanceSystemInWaterwayDredgingHiTargetGeoMatching                           String?
+  arxiv                                                                                                  String?
+  blackForestLabsFlux1SchnellHuggingFace                                                                 String?
+  blackForestLabsFlux_1SchnellHuggingFace                                                                String?
+  bookSurfAi                                                                                             String?
+  brainybear                                                                                             String?
+  careercompanion                                                                                        String?
+  chinaInflatable                                                                                        String?
+  compareaimodels                                                                                        String?
+  connectedPapers                                                                                        String?
+  connectedPapersFindAndExploreAcademicPapers                                                            String?
+  connexionTLRecoursCitoyensConseilD_39Tat                                                               String?
+  connexionTeleRecoursCitoyens                                                                           String?
+  courseMasteringFullStackDevelopment                                                                    String?
+  courseMasteringFullStackDevelopmentAComprehensiveGuideToBuildingEndToEndApplications_1PdfOpal          String?
+  createdAt                                                                                              DateTime  @default(now())
+  dagsHub                                                                                                String?
+  dashboard                                                                                              String?
+  dashboardSpeechmatics                                                                                  String?
+  deepAi                                                                                                 String?
+  deepSeekCoder                                                                                          String?
+  deepgram                                                                                               String?
+  deeplearningAi                                                                                         String?
+  deepseekAiDeepSeekCoderV2Instruct                                                                      String?
+  deepseekAiDeepSeekCoderV2InstructHuggingFace                                                           String?
+  defaultFolderDashboardNebiusAi                                                                         String?
+  demoWithUi                                                                                             String?
+  diplomatie                                                                                             String?
+  etatCivilEtNationalite                                                                                 String?
+  etatCivilEtNationaliteFrancaise                                                                        String?
+  figureAi                                                                                               String?
+  findARemoteAiJob                                                                                       String?
+  flux1Schnell                                                                                           String?
+  freeTranscriptionToolDeepgram                                                                          String?
+  hCaptcha                                                                                               String?
+  hCaptchaDashboard                                                                                      String?
+  homeSubstack                                                                                           String?
+  icon                                                                                                   String?
+  id                                                                                                     String    @id @default(cuid())
+  improvingAccuracyOfLlmApplications                                                                     String?
+  improvingAccuracyOfLlmApplicationsDeepLearningAi                                                       String?
+  interviewGenerator                                                                                     String?
+  interviewQuestionGenerator                                                                             String?
+  jumpCloud                                                                                              String?
+  lab2                                                                                                   String?
+  lab2AiGeneratedDataApps                                                                                String?
+  learnopalFlashcards                                                                                    String?
+  lidarSensorExcavatorGoogleSearch                                                                       String?
+  massistant                                                                                             String?
+  massistantYourInspiringCompanion                                                                       String?
+  massistantYourInspiringCompanionForLife                                                                String?
+  mindsmith                                                                                              String?
+  mmSciAMultimodalMultiDisciplineDataset                                                                 String?
+  mmSciAMultimodalMultiDisciplineDatasetForPhD                                                           String?
+  mmSciAMultimodalMultiDisciplineDatasetForPhDLevelScientificComprehension                               String?
+  multionAi                                                                                              String?
+  napkinAi                                                                                               String?
+  navigation                                                                                             String?
+  nebiusAi                                                                                               String?
+  orderTermsInflatablesChinee                                                                            String?
+  orderTermsInflatablesInflatableBouncersInflatableWaterSlidesInflatableTentsInflatablesForGamesInChinee String?
+  polygrAi                                                                                               String?
+  polygrAiDigitalPolygraphPoweredByAi                                                                    String?
+  proAiComparisonTool                                                                                    String?
+  quickStart                                                                                             String?
+  sakanaAi                                                                                               String?
+  sakanaAiAiScientist                                                                                    String?
+  sakanaAiAiScientistTheAiScientistTowardsFullyAutomatedOpenEndedScientificDiscovery                     String?
+  scanDocFlow                                                                                            String?
+  signInNapkinAi                                                                                         String?
+  signupJumpCloud                                                                                        String?
+  startHereTutorialLesson                                                                                String?
+  substack                                                                                               String?
+  systemRequirementsTopazPhotoAi                                                                         String?
+  tatCivilEtNationalitFranAiseMinistReDeLEuropeEtDesAffairesTrangRes                                     String?
+  tavus                                                                                                  String?
+  teleRecours                                                                                            String?
+  textMine                                                                                               String?
+  theAiScientistFullyAutomatedOpenEndedScientificDiscovery                                               String?
+  theAiScientistTowardsFullyAutomatedOpenEndedScientificDiscovery                                        String?
+  title                                                                                                  String?
+  topazPhotoAi                                                                                           String?
+  updatedAt                                                                                              DateTime  @updatedAt
+  url                                                                                                    String?
+  usingTheWmicCommandForDetailedProcessInformationWithExamples                                           String?
+  usingWmicCommand                                                                                       String?
+  wmicCommand                                                                                            String?
+}
+
+enum EnumComputeTaskStatus {
+  Option1
+}
