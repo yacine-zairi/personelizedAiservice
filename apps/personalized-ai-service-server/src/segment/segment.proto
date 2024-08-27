@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+                 package segment;
+service SegmentService {
+ rpc createSegment (SegmentCreateInput) returns (Segment) {}
+rpc segments (findManyParams) returns (stream Segment) {}
+rpc segment (SegmentWhereUniqueInput) returns (Segment) {}
+rpc updateSegment (SegmentUpdateInput) returns (Segment) {}
+rpc deleteSegment (SegmentWhereUniqueInput) returns (Segment) {} 
+ }
+message SegmentCreateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string updatedAt = 5;
+};
+message Segment {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string updatedAt = 5;
+};
+message SegmentWhereUniqueInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string updatedAt = 5;
+};
+message SegmentUpdateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string name = 4;
+string updatedAt = 5;
+};
+message findManyParams {
+
+};
