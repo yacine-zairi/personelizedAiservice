@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+                 package computeTask;
+service ComputeTaskService {
+ rpc createComputeTask (ComputeTaskCreateInput) returns (ComputeTask) {}
+rpc computeTasks (findManyParams) returns (stream ComputeTask) {}
+rpc computeTask (ComputeTaskWhereUniqueInput) returns (ComputeTask) {}
+rpc updateComputeTask (ComputeTaskUpdateInput) returns (ComputeTask) {}
+rpc deleteComputeTask (ComputeTaskWhereUniqueInput) returns (ComputeTask) {} 
+ }
+message ComputeTaskCreateInput {
+string createdAt = 1;
+string id = 2;
+string result = 3;
+repeated string status = 4;
+string taskName = 5;
+string updatedAt = 6;
+};
+message ComputeTask {
+string createdAt = 1;
+string id = 2;
+string result = 3;
+repeated string status = 4;
+string taskName = 5;
+string updatedAt = 6;
+};
+message ComputeTaskWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string result = 3;
+repeated string status = 4;
+string taskName = 5;
+string updatedAt = 6;
+};
+message ComputeTaskUpdateInput {
+string createdAt = 1;
+string id = 2;
+string result = 3;
+repeated string status = 4;
+string taskName = 5;
+string updatedAt = 6;
+};
+message findManyParams {
+
+};

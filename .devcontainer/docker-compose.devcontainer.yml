@@ -1,0 +1,9 @@
+include:
+  - ../apps/personalized-ai-service-server/docker-compose.yml
+version: "3"
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/base:debian
+    command: sleep infinity
+    links:
+      - server
