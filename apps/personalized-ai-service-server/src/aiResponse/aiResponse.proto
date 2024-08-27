@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package aiResponse;
+service AiResponseService {
+ rpc createAiResponse (AiResponseCreateInput) returns (AiResponse) {}
+rpc aiResponses (findManyParams) returns (stream AiResponse) {}
+rpc aiResponse (AiResponseWhereUniqueInput) returns (AiResponse) {}
+rpc updateAiResponse (AiResponseUpdateInput) returns (AiResponse) {}
+rpc deleteAiResponse (AiResponseWhereUniqueInput) returns (AiResponse) {} 
+ }
+message AiResponseCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message AiResponse {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message AiResponseWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message AiResponseUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};

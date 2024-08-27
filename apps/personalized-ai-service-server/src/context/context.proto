@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+                 package context;
+service ContextService {
+ rpc createContext (ContextCreateInput) returns (Context) {}
+rpc contexts (findManyParams) returns (stream Context) {}
+rpc context (ContextWhereUniqueInput) returns (Context) {}
+rpc updateContext (ContextUpdateInput) returns (Context) {}
+rpc deleteContext (ContextWhereUniqueInput) returns (Context) {} 
+ }
+message ContextCreateInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string typeField = 4;
+string updatedAt = 5;
+};
+message Context {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string typeField = 4;
+string updatedAt = 5;
+};
+message ContextWhereUniqueInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string typeField = 4;
+string updatedAt = 5;
+};
+message ContextUpdateInput {
+string createdAt = 1;
+string data = 2;
+string id = 3;
+string typeField = 4;
+string updatedAt = 5;
+};
+message findManyParams {
+
+};

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package conversationHistory;
+service ConversationHistoryService {
+ rpc createConversationHistory (ConversationHistoryCreateInput) returns (ConversationHistory) {}
+rpc conversationHistories (findManyParams) returns (stream ConversationHistory) {}
+rpc conversationHistory (ConversationHistoryWhereUniqueInput) returns (ConversationHistory) {}
+rpc updateConversationHistory (ConversationHistoryUpdateInput) returns (ConversationHistory) {}
+rpc deleteConversationHistory (ConversationHistoryWhereUniqueInput) returns (ConversationHistory) {} 
+ }
+message ConversationHistoryCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message ConversationHistory {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message ConversationHistoryWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message ConversationHistoryUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};

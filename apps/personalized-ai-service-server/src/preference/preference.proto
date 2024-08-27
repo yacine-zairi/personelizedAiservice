@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+                 package preference;
+service PreferenceService {
+ rpc createPreference (PreferenceCreateInput) returns (Preference) {}
+rpc preferences (findManyParams) returns (stream Preference) {}
+rpc preference (PreferenceWhereUniqueInput) returns (Preference) {}
+rpc updatePreference (PreferenceUpdateInput) returns (Preference) {}
+rpc deletePreference (PreferenceWhereUniqueInput) returns (Preference) {} 
+ }
+message PreferenceCreateInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+string updatedAt = 4;
+string value = 5;
+};
+message Preference {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+string updatedAt = 4;
+string value = 5;
+};
+message PreferenceWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+string updatedAt = 4;
+string value = 5;
+};
+message PreferenceUpdateInput {
+string createdAt = 1;
+string id = 2;
+string name = 3;
+string updatedAt = 4;
+string value = 5;
+};
+message findManyParams {
+
+};
