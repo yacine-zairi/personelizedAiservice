@@ -6,12 +6,11 @@ export const BookmarkList = (props: ListProps): React.ReactElement => {
   return (
     <List
       {...props}
-      bulkActionButtons={false}
       title={"Bookmarks"}
       perPage={50}
       pagination={<Pagination />}
     >
-      <Datagrid rowClick="show">
+      <Datagrid rowClick="show" bulkActionButtons={false}>
         <TextField label="addDate" source="addDate" />
         <TextField label="AI | Figure" source="aiFigure" />
         <TextField
@@ -218,7 +217,7 @@ export const BookmarkList = (props: ListProps): React.ReactElement => {
           source="usingTheWmicCommandForDetailedProcessInformationWithExamples"
         />
         <TextField label="Using_WMIC_Command" source="usingWmicCommand" />
-        <TextField label="WMIC_Command" source="wmicCommand" />
+        <TextField label="WMIC_Command" source="wmicCommand" />{" "}
       </Datagrid>
     </List>
   );
