@@ -23,9 +23,9 @@ import { AuthModule } from "./auth/auth.module";
 @Module({
   controllers: [],
   imports: [
+    KafkaModule,
     ACLModule,
     AuthModule,
-    KafkaModule,
     ConversationHistoryModule,
     AiResponseModule,
     UserModule,
